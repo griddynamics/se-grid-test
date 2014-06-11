@@ -1,0 +1,567 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Grid Console_files/jquery.min.js"></script><script src="./Grid Console_files/console-beta.js"></script><link href="./Grid Console_files/console-beta.css" rel="stylesheet" type="text/css"><link href="" rel="icon" type="image/x-icon"><title>Grid Console</title><style>.busy { opacity : 0.4;filter: alpha(opacity=40);}</style><style>.lookupUVTUDL, .lookupforemostUVTUDL, .lookupdockedUVTUDL, .rowiframeUVTUDL, .celliframeUVTUDL, .iframeUVTUDL, .emptyUVTUDL, .barUVTUDL, .barforemostUVTUDL, .bardockedUVTUDL, .cellUVTUDL, .leftUVTUDL, .rightUVTUDL, .buttoncontainerUVTUDL, .buttonUVTUDL, .buttonimageUVTUDL, .waitingUVTUDL, .handleUVTUDL, .queryUVTUDL, .hintUVTUDL, .templateUVTUDL, .firstlevelgroupUVTUDL, .notfirstlevelgroupUVTUDL{
+	    background: none !important;
+	    border: 0px !important;
+	    border-style: none !important;
+	     color: black !important;
+	     direction: ltr !important;
+	     float: none !important;
+	     font-family: sans-serif !important;
+	     font-size: small !important;
+	     font-style: normal !important;
+	     font-variant: normal !important;
+	     font-weight: normal !important;
+	     letter-spacing: normal !important;
+	     line-height: normal !important;
+	     margin: 0px !important;
+	    padding: 0px !important;
+	    text-align: left !important;
+	     text-decoration: none !important;
+	     text-indent: 0px !important;
+	     text-transform: none !important;
+	     vertical-align: baseline !important;
+	    white-space: normal !important;
+}
+
+div.lookupUVTUDL{
+	     display: table !important;
+	     -webkit-transition: -webkit-box-shadow 0.25s linear, border-color 0.25s linear !important;
+}
+
+div.lookupforemostUVTUDL{
+}
+
+div.lookupdockedUVTUDL{
+}
+
+div.rowiframeUVTUDL{
+	     display: table-row !important;
+}
+
+div.rowiframeUVTUDL td.celliframeUVTUDL{
+	      display: table-cell !important;
+	      width: 100% !important;
+	      height: 100% !important;
+}
+
+td.celliframeUVTUDL iframe.iframeUVTUDL{
+	       display: inline !important;
+	       width: 100% !important;
+	       height: 100% !important;
+	       background-color: white !important;
+}
+
+iframe.emptyUVTUDL{
+	       background-image: url('chrome-extension://hljnlfolmbmibdjaikiaepgepgnldclj/img/128.png') !important;
+	       background-position: 50% 50% !important;
+	       background-repeat: no-repeat !important;
+}
+
+div.barUVTUDL{
+	     display: table-row !important;
+	     -webkit-transition: background 0.25s linear !important;
+	     width: 100% !important;
+	     cursor: move !important;
+	     background: lightgrey !important;
+}
+
+div.barforemostUVTUDL{
+	background: #84b7ea !important;
+}
+
+div.bardockedUVTUDL{
+	background: #336699 !important;
+}
+
+div.barUVTUDL div.cellUVTUDL{
+	     display: table-cell !important;
+	     vertical-align: middle !important;
+}
+
+div.leftUVTUDL{
+	     padding-right: 16px !important;
+	     text-align: left !important;
+}
+
+div.rightUVTUDL{
+	     white-space: nowrap !important;
+	     text-align: right !important;
+}
+
+span.buttoncontainerUVTUDL{
+	     display:inline !important;
+}
+
+a.buttonUVTUDL:link{
+	     display:inline !important;
+	     -webkit-user-select: none !important;
+	     color: transparent !important;
+}
+
+a.buttonUVTUDL img.buttonimageUVTUDL{
+	     display:inline !important;
+	     vertical-align: middle !important;
+}
+
+img.waitingUVTUDL{
+	     display:inline !important;
+	     cursor: pointer !important;
+	     -webkit-user-select: none !important;
+	     vertical-align: middle !important;
+	     padding-left: 6px !important;
+	 padding-right: 6px !important;
+}
+
+div.handleUVTUDL{
+	     display:block !important;
+	     cursor: se-resize !important;
+	     left: 100% !important;
+	     top: 100% !important;
+	     margin-left: -4px !important;
+	     margin-top: -4px !important;
+	     position: absolute !important;
+	     width: 8px !important;
+	 height: 8px !important;
+}
+
+input.queryUVTUDL{
+	     display:inline-block !important;
+	     background: white !important;
+	     vertical-align: top !important;
+	     border: 1px solid darkgrey !important;
+	      font-size: 13px !important;
+	      padding-top: 1px !important;
+	 padding-bottom: 1px !important;
+	     width: 12em !important;
+}
+
+.hintUVTUDL{
+	      color: lightgrey !important;
+	      font-style:italic !important;
+}
+
+select.templateUVTUDL{
+	     display:inline-block !important;
+	     background: white !important;
+	     font-size: 13px !important;
+	      border: 1px solid darkgrey !important;
+	      vertical-align: top !important;
+	     white-space: pre !important;
+	     width: 9em !important;
+	     margin-right: 2px !important;
+}
+
+optgroup.firstlevelgroupUVTUDL{
+	      color: blue !important;
+}
+
+.notfirstlevelgroupUVTUDL{
+	      color: black !important;
+}
+
+</style><style>.tipQVNKXP, .arrowQVNKXP, .arrowupQVNKXP, .arrowdownQVNKXP, .mainQVNKXP, .closeQVNKXP, .barQVNKXP, .rowQVNKXP, .cellQVNKXP, .leftQVNKXP, .rightQVNKXP, .displaytitleQVNKXP, .refreshQVNKXP, .pagingQVNKXP, .brandQVNKXP, .textQVNKXP, .leftlabelQVNKXP, .selectQVNKXP, .checkboxQVNKXP, .waitingQVNKXP, .buttoncontainerQVNKXP, .buttonQVNKXP, .buttonimageQVNKXP, .flagQVNKXP, .noticebarscontainerQVNKXP, .noticebarQVNKXP, .iframecontentQVNKXP{
+	    background: none !important;
+	    border: 0px !important;
+	    border-style: none !important;
+	     color: black !important;
+	     direction: ltr !important;
+	     float: none !important;
+	     font-family: sans-serif !important;
+	     font-size: small !important;
+	     font-style: normal !important;
+	     font-variant: normal !important;
+	     font-weight: normal !important;
+	     letter-spacing: normal !important;
+	     line-height: normal !important;
+	     margin: 0px !important;
+	    padding: 0px !important;
+	    text-align: left !important;
+	     text-decoration: none !important;
+	     text-indent: 0px !important;
+	     text-transform: none !important;
+	     vertical-align: baseline !important;
+	    white-space: normal !important;
+}
+
+div.tipQVNKXP{
+	     position: absolute !important;
+	     display:block !important;
+}
+
+div.arrowQVNKXP{
+	display:block !important;
+}
+
+canvas.arrowupQVNKXP{
+	      display: inline !important;
+	      vertical-align: bottom !important;
+}
+
+canvas.downupQVNKXP{
+	      display: inline !important;
+	      vertical-align: top !important;
+}
+
+div.mainQVNKXP{
+	display: block !important;
+}
+
+img.closeQVNKXP{
+	      display: block !important;
+	      -webkit-transition: opacity 0.5s linear !important;
+	      float: right !important;
+	      margin-right: -5px !important;
+	      margin-top: -5px !important;
+}
+
+div.barQVNKXP{
+	     display: table !important;
+	      margin-bottom: 4px !important;
+	     -webkit-user-select: none !important;
+	     width: 100% !important;
+}
+
+div.rowQVNKXP{
+	display: table-row !important;
+}
+
+div.cellQVNKXP{
+	      display: table-cell !important;
+	      vertical-align: middle !important;
+}
+
+.leftQVNKXP{
+	      padding-right: 16px !important;
+	      text-align: left !important;
+}
+
+.rightQVNKXP{
+	text-align: right !important;
+}
+
+span.refreshQVNKXP{
+	display: inline !important;
+}
+
+span.pagingQVNKXP{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+span.buttoncontainerQVNKXP{
+	display: inline !important;
+}
+
+span.displaytitleQVNKXP{
+	      display: inline !important;
+	      padding-left: 6px !important;
+	      font-size: small !important;
+	      font-weight: bold !important;
+}
+
+span.displaytitleQVNKXP a:link{
+	       display: inline !important;
+	       color: #0645AD !important;
+	       text-decoration: none !important;
+}
+
+span.displaytitleQVNKXP img{
+	display: inline !important;
+}
+
+span.brandQVNKXP{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+.brandQVNKXP a{
+	       display: inline !important;
+	       font-size: x-small !important;
+}
+
+.brandQVNKXP a:link{
+	       display: inline !important;
+	       color: #0645AD !important;
+	       text-decoration: none !important;
+}
+
+.brandQVNKXP a:visited{
+	       display: inline !important;
+	       color: #0B0080 !important;
+	       text-decoration: none !important;
+}
+
+span.textQVNKXP{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+label.leftlabelQVNKXP{
+	      display: inline !important;
+	      font-size: x-small !important;
+	      margin-right: 3px !important;
+}
+
+select.selectQVNKXP{
+	       display: inline-block !important;
+	       border: 1px solid darkgrey !important;
+	       white-space: pre !important;
+	       font-size: x-small !important;
+}
+
+input.checkboxQVNKXP{
+	      display: inline-block !important;
+	      vertical-align: text-top !important;
+	      font-size: x-small !important;
+	      margin-right: 0.3em !important;
+}
+
+img.waitingQVNKXP{
+	      display: inline !important;
+	      -webkit-user-select: none !important;
+	      vertical-align: middle !important;
+	      padding-left: 3px !important;
+}
+
+a.buttonQVNKXP, a.buttonQVNKXP:link{
+	      display: inline !important;
+	      -webkit-user-select: none !important;
+	      color: transparent !important;
+	      margin-right: 2px !important;
+}
+
+img.buttonimageQVNKXP{
+	      display: inline !important;
+	      vertical-align: middle !important;
+}
+
+img.flagQVNKXP{
+	      display: inline !important;
+	      vertical-align: middle !important;
+	      padding-bottom:2px !important;
+}
+
+img.buttonselectedQVNKXP{
+	      display: inline !important;
+	      background: #dd8 !important;
+	      border: 1px solid #bb6 !important;
+	      margin: -1px !important;
+	      border-radius: 2px !important;
+}
+
+div.noticebarscontainerQVNKXP{
+	     display: block !important;
+	     text-align: left !important;
+	     margin-bottom: 4px !important;
+	     overflow-y: auto !important;
+}
+
+div.noticebarQVNKXP{
+	     display: block !important;
+	     background: white !important;
+	     font-size: x-small !important;
+	     border-left: 3px solid lightGrey !important;
+	     margin-bottom: 1px !important;
+	     padding-left: 2px !important;
+}
+
+div.noticebarQVNKXP img{
+	      display: inline !important;
+	      margin-right: 1px !important;
+	      vertical-align: text-top !important;
+}
+
+div.noticebarQVNKXP a{
+	      display: inline !important;
+	      font-family: sans-serif !important;
+	       font-style: normal !important;
+	       font-variant: normal !important;
+	       font-weight: normal !important;
+	       font-size: x-small !important;
+}
+
+div.noticebarQVNKXP a:link{
+	      display: inline !important;
+	      color: #0645AD !important;
+	      text-decoration: none !important;
+}
+
+div.noticebarQVNKXP a:visited{
+	      display: inline !important;
+	      color: #0B0080 !important;
+	      text-decoration: none !important;
+}
+
+iframe.iframecontentQVNKXP{
+	     display: inline !important;
+	     width: 100% !important;
+}
+
+</style><style id="simplehl_hlstyle_TRNBTV">.simplehl1_QMRQGY { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,0,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl2_QMRQGY { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,165,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl3_QMRQGY { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,255,96,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl4_QMRQGY { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(96,255,96,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl5_QMRQGY { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(96,255,255,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl6_QMRQGY { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,96,255,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl7_QMRQGY { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #ffffff!important; background-color: rgba(0,0,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } </style><style id="simplehl_flashstyle_DJQSPB">@-webkit-keyframes flash {         0% {             opacity: 1;         }         100% {             opacity: 0;         }}</style></head><body><div id="main_content"><div id="header"><h1><a href="./Grid Console_files/Grid Console.html">Selenium</a></h1><h2>Grid Console v.2.40.0</h2><div><a id="helplink" target="_blank" href="http://code.google.com/p/selenium/wiki/Grid2">Help</a></div></div><div id="leftColumn"><div class="proxy"><p class="proxyname">DefaultRemoteProxy (version : 2.40.0)</p><p class="proxyid">id : http://localhost:5555, OS : VISTA</p><div class="tabs"><ul><li class="tab selected" type="browsers"><a title="test slots" href="http://localhost:4444/grid/console#">Browsers</a></li><li class="tab" type="config"><a title="node configuration" href="http://localhost:4444/grid/console#">Configuration</a></li></ul></div><div class="content"><div type="browsers" class="content_detail"><p class="protocol">WebDriver</p><p>v:<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+</p><p>v:27.0<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+</p><p>v:<img src="./Grid Console_files/internet_explorer.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=iexplore}">
+</p></div><div type="config" class="content_detail" style="display: none;"><p>port:5555</p><p>host:localhost</p><p>servlets:[]</p><p>cleanUpCycle:5000</p><p>browserTimeout:0</p><p>hubHost:localhost</p><p>registerCycle:5000</p><p>hub:http://localhost:4444</p><p>newSessionWaitTimeout:-1</p><p>capabilityMatcher:org.openqa.grid.internal.utils.DefaultCapabilityMatcher</p><p>url:http://localhost:5555</p><p>remoteHost:http://localhost:5555</p><p>prioritizer:null</p><p>register:true</p><p>throwOnCapabilityNotPresent:true</p><p>nodePolling:5000</p><p>proxy:org.openqa.grid.com.griddynamics.cd.selenium.proxy.DefaultRemoteProxy</p><p>browser:browserName=firefox,version=27.0,firefox_binary=c:\firefox\27.0\firefox.exe,maxInstances=10</p><p>maxSession:10</p><p>role:node</p><p>unregisterIfStillDownAfter=5000:</p><p>hubPort:4444</p><p>timeout:300000</p></div></div></div><div class="proxy"><p class="proxyname">DefaultRemoteProxy (version : 2.40.0)</p><p class="proxyid">id : http://localhost:5555, OS : VISTA</p><div class="tabs"><ul><li class="tab selected" type="browsers"><a title="test slots" href="http://localhost:4444/grid/console#">Browsers</a></li><li class="tab" type="config"><a title="node configuration" href="http://localhost:4444/grid/console#">Configuration</a></li></ul></div><div class="content"><div type="browsers" class="content_detail"><p class="protocol">WebDriver</p><p>v:<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+</p><p>v:27.0<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+</p><p>v:<img src="./Grid Console_files/internet_explorer.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=iexplore}">
+</p></div><div type="config" class="content_detail" style="display: none;"><p>port:5555</p><p>host:localhost</p><p>servlets:[]</p><p>cleanUpCycle:5000</p><p>browserTimeout:0</p><p>hubHost:localhost</p><p>registerCycle:5000</p><p>hub:http://localhost:4444</p><p>newSessionWaitTimeout:-1</p><p>capabilityMatcher:org.openqa.grid.internal.utils.DefaultCapabilityMatcher</p><p>url:http://localhost:5555</p><p>remoteHost:http://localhost:5555</p><p>prioritizer:null</p><p>register:true</p><p>throwOnCapabilityNotPresent:true</p><p>nodePolling:5000</p><p>proxy:org.openqa.grid.com.griddynamics.cd.selenium.proxy.DefaultRemoteProxy</p><p>browser:browserName=firefox,version=27.0,firefox_binary=c:\firefox\27.0\firefox.exe,maxInstances=10</p><p>maxSession:10</p><p>role:node</p><p>unregisterIfStillDownAfter=5000:</p><p>hubPort:4444</p><p>timeout:300000</p></div></div></div><div class="proxy"><p class="proxyname">DefaultRemoteProxy (version : 2.40.0)</p><p class="proxyid">id : http://localhost:5555, OS : VISTA</p><div class="tabs"><ul><li class="tab selected" type="browsers"><a title="test slots" href="http://localhost:4444/grid/console#">Browsers</a></li><li class="tab" type="config"><a title="node configuration" href="http://localhost:4444/grid/console#">Configuration</a></li></ul></div><div class="content"><div type="browsers" class="content_detail"><p class="protocol">WebDriver</p><p>v:<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+</p><p>v:27.0<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+</p><p>v:<img src="./Grid Console_files/internet_explorer.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=iexplore}">
+</p></div><div type="config" class="content_detail" style="display: none;"><p>port:5555</p><p>host:localhost</p><p>servlets:[]</p><p>cleanUpCycle:5000</p><p>browserTimeout:0</p><p>hubHost:localhost</p><p>registerCycle:5000</p><p>hub:http://localhost:4444</p><p>newSessionWaitTimeout:-1</p><p>capabilityMatcher:org.openqa.grid.internal.utils.DefaultCapabilityMatcher</p><p>url:http://localhost:5555</p><p>remoteHost:http://localhost:5555</p><p>prioritizer:null</p><p>register:true</p><p>throwOnCapabilityNotPresent:true</p><p>nodePolling:5000</p><p>proxy:org.openqa.grid.com.griddynamics.cd.selenium.proxy.DefaultRemoteProxy</p><p>browser:browserName=firefox,version=27.0,firefox_binary=c:\firefox\27.0\firefox.exe,maxInstances=10</p><p>maxSession:10</p><p>role:node</p><p>unregisterIfStillDownAfter=5000:</p><p>hubPort:4444</p><p>timeout:300000</p></div></div></div><div class="proxy"><p class="proxyname">DefaultRemoteProxy (version : 2.40.0)</p><p class="proxyid">id : http://localhost:5555, OS : VISTA</p><div class="tabs"><ul><li class="tab selected" type="browsers"><a title="test slots" href="http://localhost:4444/grid/console#">Browsers</a></li><li class="tab" type="config"><a title="node configuration" href="http://localhost:4444/grid/console#">Configuration</a></li></ul></div><div class="content"><div type="browsers" class="content_detail"><p class="protocol">WebDriver</p><p>v:<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+</p><p>v:27.0<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+</p><p>v:<img src="./Grid Console_files/internet_explorer.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=iexplore}">
+</p></div><div type="config" class="content_detail" style="display: none;"><p>port:5555</p><p>host:localhost</p><p>servlets:[]</p><p>cleanUpCycle:5000</p><p>browserTimeout:0</p><p>hubHost:localhost</p><p>registerCycle:5000</p><p>hub:http://localhost:4444</p><p>newSessionWaitTimeout:-1</p><p>capabilityMatcher:org.openqa.grid.internal.utils.DefaultCapabilityMatcher</p><p>url:http://localhost:5555</p><p>remoteHost:http://localhost:5555</p><p>prioritizer:null</p><p>register:true</p><p>throwOnCapabilityNotPresent:true</p><p>nodePolling:5000</p><p>proxy:org.openqa.grid.com.griddynamics.cd.selenium.proxy.DefaultRemoteProxy</p><p>browser:browserName=firefox,version=27.0,firefox_binary=c:\firefox\27.0\firefox.exe,maxInstances=10</p><p>maxSession:10</p><p>role:node</p><p>unregisterIfStillDownAfter=5000:</p><p>hubPort:4444</p><p>timeout:300000</p></div></div></div></div><div id="rightColumn"><div class="proxy"><p class="proxyname">DefaultRemoteProxy (version : 2.40.0)</p><p class="proxyid">id : http://localhost:5555, OS : VISTA</p><div class="tabs"><ul><li class="tab selected" type="browsers"><a title="test slots" href="http://localhost:4444/grid/console#">Browsers</a></li><li class="tab" type="config"><a title="node configuration" href="http://localhost:4444/grid/console#">Configuration</a></li></ul></div><div class="content"><div type="browsers" class="content_detail"><p class="protocol">WebDriver</p><p>v:<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+</p><p>v:27.0<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+</p><p>v:<img src="./Grid Console_files/internet_explorer.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=iexplore}">
+</p></div><div type="config" class="content_detail" style="display: none;"><p>port:5555</p><p>host:localhost</p><p>servlets:[]</p><p>cleanUpCycle:5000</p><p>browserTimeout:0</p><p>hubHost:localhost</p><p>registerCycle:5000</p><p>hub:http://localhost:4444</p><p>newSessionWaitTimeout:-1</p><p>capabilityMatcher:org.openqa.grid.internal.utils.DefaultCapabilityMatcher</p><p>url:http://localhost:5555</p><p>remoteHost:http://localhost:5555</p><p>prioritizer:null</p><p>register:true</p><p>throwOnCapabilityNotPresent:true</p><p>nodePolling:5000</p><p>proxy:org.openqa.grid.com.griddynamics.cd.selenium.proxy.DefaultRemoteProxy</p><p>browser:browserName=firefox,version=27.0,firefox_binary=c:\firefox\27.0\firefox.exe,maxInstances=10</p><p>maxSession:10</p><p>role:node</p><p>unregisterIfStillDownAfter=5000:</p><p>hubPort:4444</p><p>timeout:300000</p></div></div></div><div class="proxy"><p class="proxyname">DefaultRemoteProxy (version : 2.40.0)</p><p class="proxyid">id : http://localhost:5555, OS : VISTA</p><div class="tabs"><ul><li class="tab selected" type="browsers"><a title="test slots" href="http://localhost:4444/grid/console#">Browsers</a></li><li class="tab" type="config"><a title="node configuration" href="http://localhost:4444/grid/console#">Configuration</a></li></ul></div><div class="content"><div type="browsers" class="content_detail"><p class="protocol">WebDriver</p><p>v:<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+</p><p>v:27.0<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+</p><p>v:<img src="./Grid Console_files/internet_explorer.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=iexplore}">
+</p></div><div type="config" class="content_detail" style="display: none;"><p>port:5555</p><p>host:localhost</p><p>servlets:[]</p><p>cleanUpCycle:5000</p><p>browserTimeout:0</p><p>hubHost:localhost</p><p>registerCycle:5000</p><p>hub:http://localhost:4444</p><p>newSessionWaitTimeout:-1</p><p>capabilityMatcher:org.openqa.grid.internal.utils.DefaultCapabilityMatcher</p><p>url:http://localhost:5555</p><p>remoteHost:http://localhost:5555</p><p>prioritizer:null</p><p>register:true</p><p>throwOnCapabilityNotPresent:true</p><p>nodePolling:5000</p><p>proxy:org.openqa.grid.com.griddynamics.cd.selenium.proxy.DefaultRemoteProxy</p><p>browser:browserName=firefox,version=27.0,firefox_binary=c:\firefox\27.0\firefox.exe,maxInstances=10</p><p>maxSession:10</p><p>role:node</p><p>unregisterIfStillDownAfter=5000:</p><p>hubPort:4444</p><p>timeout:300000</p></div></div></div><div class="proxy"><p class="proxyname">DefaultRemoteProxy (version : 2.40.0)</p><p class="proxyid">id : http://localhost:5555, OS : VISTA</p><div class="tabs"><ul><li class="tab selected" type="browsers"><a title="test slots" href="http://localhost:4444/grid/console#">Browsers</a></li><li class="tab" type="config"><a title="node configuration" href="http://localhost:4444/grid/console#">Configuration</a></li></ul></div><div class="content"><div type="browsers" class="content_detail"><p class="protocol">WebDriver</p><p>v:<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+</p><p>v:27.0<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+</p><p>v:<img src="./Grid Console_files/internet_explorer.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=iexplore}">
+</p></div><div type="config" class="content_detail" style="display: none;"><p>port:5555</p><p>host:localhost</p><p>servlets:[]</p><p>cleanUpCycle:5000</p><p>browserTimeout:0</p><p>hubHost:localhost</p><p>registerCycle:5000</p><p>hub:http://localhost:4444</p><p>newSessionWaitTimeout:-1</p><p>capabilityMatcher:org.openqa.grid.internal.utils.DefaultCapabilityMatcher</p><p>url:http://localhost:5555</p><p>remoteHost:http://localhost:5555</p><p>prioritizer:null</p><p>register:true</p><p>throwOnCapabilityNotPresent:true</p><p>nodePolling:5000</p><p>proxy:org.openqa.grid.com.griddynamics.cd.selenium.proxy.DefaultRemoteProxy</p><p>browser:browserName=firefox,version=27.0,firefox_binary=c:\firefox\27.0\firefox.exe,maxInstances=10</p><p>maxSession:10</p><p>role:node</p><p>unregisterIfStillDownAfter=5000:</p><p>hubPort:4444</p><p>timeout:300000</p></div></div></div><div class="proxy"><p class="proxyname">DefaultRemoteProxy (version : 2.40.0)</p><p class="proxyid">id : http://localhost:5555, OS : VISTA</p><div class="tabs"><ul><li class="tab selected" type="browsers"><a title="test slots" href="http://localhost:4444/grid/console#">Browsers</a></li><li class="tab" type="config"><a title="node configuration" href="http://localhost:4444/grid/console#">Configuration</a></li></ul></div><div class="content"><div type="browsers" class="content_detail"><p class="protocol">WebDriver</p><p>v:<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+<img src="./Grid Console_files/chrome.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=chrome, maxInstances=10}">
+</p><p>v:27.0<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+<img src="./Grid Console_files/firefox.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, firefox_binary=c:\firefox\27.0\firefox.exe, browserName=firefox, maxInstances=10, version=27.0}">
+</p><p>v:<img src="./Grid Console_files/internet_explorer.png" width="16" height="16" title="{platform=VISTA, seleniumProtocol=WebDriver, browserName=iexplore}">
+</p></div><div type="config" class="content_detail" style="display: none;"><p>port:5555</p><p>host:localhost</p><p>servlets:[]</p><p>cleanUpCycle:5000</p><p>browserTimeout:0</p><p>hubHost:localhost</p><p>registerCycle:5000</p><p>hub:http://localhost:4444</p><p>newSessionWaitTimeout:-1</p><p>capabilityMatcher:org.openqa.grid.internal.utils.DefaultCapabilityMatcher</p><p>url:http://localhost:5555</p><p>remoteHost:http://localhost:5555</p><p>prioritizer:null</p><p>register:true</p><p>throwOnCapabilityNotPresent:true</p><p>nodePolling:5000</p><p>proxy:org.openqa.grid.com.griddynamics.cd.selenium.proxy.DefaultRemoteProxy</p><p>browser:browserName=firefox,version=27.0,firefox_binary=c:\firefox\27.0\firefox.exe,maxInstances=10</p><p>maxSession:10</p><p>role:node</p><p>unregisterIfStillDownAfter=5000:</p><p>hubPort:4444</p><p>timeout:300000</p></div></div></div></div><div class="clearfix"></div><div><ul></ul></div><a href="http://localhost:4444/grid/console?config=true&configDebug=true">view config</a></div></body></html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2014, Grid Dynamics International, Inc.
+  Licensed under the Apache License, Version 2.0.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+  <bean id="props" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+    <property name="properties" ref="defaults"/>
+  </bean>
+  <!--Default properties should give you a sense of what properties exist at all-->
+  <util:properties id="defaults">
+    <!--This is a URL tests are going to use to connect to Grid in order to create Web Driver sessions-->
+    <prop key="SELENIUM_URL">http://localhost:4444</prop>
+    <!--Some tests will need to open HTML pages, a good choice would be a page of Se Hub itself. But Nodes may not be
+    able to access the same URL as tests did, therefore it may be different-->
+    <prop key="SELENIUM_URL_TO_ACCESS_FROM_TESTS">${SELENIUM_URL}</prop>
+    <prop key="EXPECTED_NUMBER_OF_BROWSERS">22</prop>
+    <prop key="EXPECTED_NUMBER_OF_NODES">1</prop>
+  </util:properties>
+</beans>
