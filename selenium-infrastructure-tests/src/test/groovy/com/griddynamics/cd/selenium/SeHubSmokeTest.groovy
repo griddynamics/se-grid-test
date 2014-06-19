@@ -35,13 +35,4 @@ class SeHubSmokeTest extends Specification {
         then: "$expectedNumberOfBrowsers of browsers should be found"
             expectedNumberOfBrowsers == nodes.allBrowsers.size()
     }
-
-    def "one browser on every node should open a page of Se Grid Console"() {
-        given: "Selenium Grid is running on: $wdRootUrl"
-            new URL(wdRootUrl).text
-        when: "Accessing Grid Console"
-            SeNodes nodes = new HubPageParser().parseHubConsolePage(new URL("${wdRootUrl}/grid/console"))
-        then: "$expectedNumberOfBrowsers of browsers should be found"
-            expectedNumberOfBrowsers == nodes.allBrowsers.size()
-    }
 }

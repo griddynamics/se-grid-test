@@ -19,7 +19,7 @@
     <!--Node tests will need to access our test page to check whether Node works correctly, we start embedded HTTP
      Server (Jetty) in tests. In order for Nodes to know where the test page is located, this param should be passed.
      Note that port of the HTTP Server is dynamic and therefore is retrieved in the tests instead of being passed.-->
-    <prop key="HOST_WHERE_TESTS_RUNNING">http://localhost</prop>
+    <prop key="TEST_PAGE_HOST">http://localhost</prop>
     <prop key="EXPECTED_NUMBER_OF_BROWSERS">22</prop>
     <prop key="EXPECTED_NUMBER_OF_NODES">1</prop>
   </util:properties>
@@ -28,7 +28,8 @@
     <constructor-arg index="0" value="com/griddynamics/cd/selenium/to-test-se-nodes.html"/>
   </bean>
 
-  <!--Starts an HTTP server that's going to spit out the test HTML page. Se Nodes are going to access this server.-->
+  <!--Starts an HTTP server that's going to spit out the test HTML page. Se Nodes are going to access this server.
+  Note, that the port HTTP Server listens to is dynamically assigned.-->
   <bean id="httpServerToShowPageUnderTest" class="org.eclipse.jetty.server.Server" init-method="start">
     <property name="handler">
       <bean class="org.eclipse.jetty.server.handler.ContextHandler">

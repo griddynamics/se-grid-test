@@ -3,8 +3,33 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title></title>
+  <script src="https://apis.google.com/js/platform.js"></script>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#draggable").draggable();
+      $("#droppable").droppable({
+        drop: function (event, ui) {
+          $(this)
+              .addClass("ui-state-highlight")
+              .find("p")
+              .html("Dropped!");
+        }
+      });
+    });
+  </script>
 </head>
 <body>
- <h1>From File</h1>
+<h1>This test page contains elements to be used to check whether Se Nodes work.</h1>
+
+<div id="to-show" style="display:none">
+  <p>Tests should change 'display' attribute in order to make this element to become visible</p></div>
+<div class="g-ytsubscribe" data-channel="GoogleDevelopers">
+  <p>Youtube button should show up here and div should get ID=___ytsubscribe_0</p></div>
+<div id="draggable" style="width:100px;height: 100px; border: 1px solid;">
+  <p>Drag me to my target</p></div>
+<div id="droppable" style="width:200px;height: 200px;border: 1px solid;">
+  <p id="dropped-text">Drop here. Should be changed on "Dropped!" after that.</p></div>
 </body>
 </html>
