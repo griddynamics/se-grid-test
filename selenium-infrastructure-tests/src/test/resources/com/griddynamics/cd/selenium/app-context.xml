@@ -8,6 +8,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
   <bean id="props" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <!--It's possible to override configuration e.g. by `-Dparam=blah` during maven build-->
     <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
     <property name="properties" ref="defaults"/>
   </bean>
@@ -15,10 +16,37 @@
   <util:properties id="defaults">
     <!--This is a URL tests are going to use to connect to Grid in order to create Web Driver sessions-->
     <prop key="SELENIUM_URL">http://localhost:4444</prop>
-    <!--Some tests will need to open HTML pages, a good choice would be a page of Se Hub itself. But Nodes may not be
-    able to access the same URL as tests did, therefore it may be different-->
-    <prop key="SELENIUM_URL_TO_ACCESS_FROM_TESTS">${SELENIUM_URL}</prop>
+    <!--Node tests will need to access our test page to check whether Node works correctly, we start embedded HTTP
+     Server (Jetty) in tests. In order for Nodes to know where the test page is located, this param should be passed.
+     Note that port of the HTTP Server is dynamic and therefore is retrieved in the tests instead of being passed.-->
+    <prop key="HOST_WHERE_TESTS_RUNNING">http://localhost</prop>
     <prop key="EXPECTED_NUMBER_OF_BROWSERS">22</prop>
     <prop key="EXPECTED_NUMBER_OF_NODES">1</prop>
   </util:properties>
+  <!--File that is going to be accessed via HTTP by Se Nodes in order to test how nodes work with HTML-->
+  <bean id="htmlFile" class="org.eclipse.jetty.util.resource.Resource" factory-method="newClassPathResource">
+    <constructor-arg index="0" value="com/griddynamics/cd/selenium/to-test-se-nodes.html"/>
+  </bean>
+
+  <!--Starts an HTTP server that's going to spit out the test HTML page. Se Nodes are going to access this server.-->
+  <bean id="httpServerToShowPageUnderTest" class="org.eclipse.jetty.server.Server" init-method="start">
+    <property name="handler">
+      <bean class="org.eclipse.jetty.server.handler.ContextHandler">
+        <property name="contextPath" value="/"/>
+        <property name="handler">
+          <bean class="org.eclipse.jetty.server.handler.ResourceHandler">
+            <property name="baseResource" ref="htmlFile"/>
+          </bean>
+        </property>
+      </bean>
+    </property>
+    <property name="connectors">
+      <array>
+        <ref bean="httpConnector"/>
+      </array>
+    </property>
+  </bean>
+  <bean id="httpConnector" class="org.eclipse.jetty.server.ServerConnector">
+    <constructor-arg index="0" name="server" ref="httpServerToShowPageUnderTest"/>
+  </bean>
 </beans>
