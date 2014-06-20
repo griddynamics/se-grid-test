@@ -5,7 +5,7 @@
 package com.griddynamics.cd.selenium
 
 import org.eclipse.jetty.server.Server
-import org.eclipse.jetty.server.ServerConnector
+import org.eclipse.jetty.server.nio.SelectChannelConnector
 import org.openqa.selenium.By
 import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.WebDriver
@@ -96,7 +96,7 @@ class SeNodesSmokeTest extends Specification {
      * @return a built URL to access test page
      */
     private String getTestPageAddress() {
-        return "$testPageUrlToAccess:${((ServerConnector) server.connectors[0]).localPort}"
+        return "$testPageUrlToAccess:${((SelectChannelConnector)server.connectors[0]).localPort}"
     }
 
     /**

@@ -43,11 +43,8 @@
     </property>
     <property name="connectors">
       <array>
-        <ref bean="httpConnector"/>
+        <bean class="org.eclipse.jetty.server.nio.SelectChannelConnector"/>
       </array>
     </property>
-  </bean>
-  <bean id="httpConnector" class="org.eclipse.jetty.server.ServerConnector">
-    <constructor-arg index="0" name="server" ref="httpServerToShowPageUnderTest"/>
   </bean>
 </beans>
