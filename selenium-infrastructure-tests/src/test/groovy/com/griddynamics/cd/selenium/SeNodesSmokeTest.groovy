@@ -12,7 +12,6 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.remote.DesiredCapabilities
-import org.openqa.selenium.remote.RemoteWebDriver
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.WebDriverWait
 import org.springframework.beans.factory.annotation.Autowired
@@ -21,14 +20,12 @@ import org.springframework.test.context.ContextConfiguration
 import spock.lang.Shared
 import spock.lang.Specification
 
-import java.util.concurrent.TimeUnit
-
 @ContextConfiguration("classpath:/com/griddynamics/cd/selenium/app-context.xml")
 class SeNodesSmokeTest extends Specification {
-    @Value('${SELENIUM_URL}') String wdRootUrl
     @Value('${TEST_PAGE_HOST}') String testPageUrlToAccess
     @Value('${EXPECTED_NUMBER_OF_NODES}') int numberOfNodes
     @Autowired Server server
+    @Autowired WebDriverFactory driverFactory
     @Shared List<WebDriver> webDrivers
 
     def setup() {
@@ -38,7 +35,7 @@ class SeNodesSmokeTest extends Specification {
     }
 
     def "one browser on every node should open a test page"() {
-        given: "Given $numberOfNodes sessions are established with Grid: $wdRootUrl"
+        given: "Given $numberOfNodes sessions are established with Grid"
             numberOfNodes == webDrivers.size()
         when: "Accessing test HTML page from the test: $testPageAddress"
             webDrivers.each { it.get(testPageAddress) }
@@ -96,7 +93,7 @@ class SeNodesSmokeTest extends Specification {
      * @return a built URL to access test page
      */
     private String getTestPageAddress() {
-        return "$testPageUrlToAccess:${((SelectChannelConnector)server.connectors[0]).localPort}"
+        return "$testPageUrlToAccess:${((SelectChannelConnector) server.connectors[0]).localPort}"
     }
 
     /**
@@ -107,11 +104,7 @@ class SeNodesSmokeTest extends Specification {
     private List<WebDriver> createWds(int numberOfBrowsers) {
         return (1..numberOfBrowsers).collect {
             println "Starting #$it browser of $numberOfBrowsers"
-            RemoteWebDriver driver = new RemoteWebDriver(
-                    new URL("$wdRootUrl/wd/hub"), new DesiredCapabilities(browserName: 'firefox'))
-            //otherwise it may fail from time to time because of performance/network glitches on the node
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS)
-            driver
+            driverFactory.createDriver(new DesiredCapabilities(browserName: 'firefox'))
         }
     }
 }

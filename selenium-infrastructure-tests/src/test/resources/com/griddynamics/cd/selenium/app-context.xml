@@ -22,14 +22,36 @@
     <prop key="TEST_PAGE_HOST">http://localhost</prop>
     <prop key="EXPECTED_NUMBER_OF_BROWSERS">22</prop>
     <prop key="EXPECTED_NUMBER_OF_NODES">1</prop>
+    <prop key="PROXY_ENABLED">false</prop>
   </util:properties>
+  <!--You can also set these proxy-related params while starting the tests. By default all of them are empty and proxy
+  is not used. In order to make it work, specify -DPROXY_ENABLED param and params for configuring a particular proxy
+  like: -DhttpProxy=blah, -DftpProxy=blah.-->
+  <bean id="seleniumNodeProxy" class="org.openqa.selenium.Proxy">
+    <constructor-arg index="0">
+      <map>
+        <entry key="ftpProxy" value="${ftpProxy:}"/>
+        <entry key="httpProxy" value="${httpProxy:}"/>
+        <entry key="sslProxy" value="${sslProxy:}"/>
+        <entry key="noProxy" value="${noProxy:}"/>
+        <entry key="socksProxy" value="${socksProxy:}"/>
+        <entry key="socksUsername" value="${socksUsername:}"/>
+        <entry key="socksPassword" value="${socksPassword:}"/>
+      </map>
+    </constructor-arg>
+  </bean>
+  <bean id="webDriverFactory" class="com.griddynamics.cd.selenium.WebDriverFactory">
+    <constructor-arg index="0" name="webDriverUrl" value="${SELENIUM_URL}/wd/hub"/>
+    <property name="proxy" ref="seleniumNodeProxy"/>
+    <property name="proxyEnabled" value="${PROXY_ENABLED}"/>
+  </bean>
   <!--File that is going to be accessed via HTTP by Se Nodes in order to test how nodes work with HTML-->
   <bean id="htmlFile" class="org.eclipse.jetty.util.resource.Resource" factory-method="newClassPathResource">
     <constructor-arg index="0" value="com/griddynamics/cd/selenium/to-test-se-nodes.html"/>
   </bean>
 
   <!--Starts an HTTP server that's going to spit out the test HTML page. Se Nodes are going to access this server.
-  Note, that the port HTTP Server listens to is dynamically assigned.-->
+      Note, that the port HTTP Server listens to is dynamically assigned.-->
   <bean id="httpServerToShowPageUnderTest" class="org.eclipse.jetty.server.Server" init-method="start">
     <property name="handler">
       <bean class="org.eclipse.jetty.server.handler.ContextHandler">
