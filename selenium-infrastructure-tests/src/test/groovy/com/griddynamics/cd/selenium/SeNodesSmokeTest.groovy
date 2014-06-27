@@ -57,8 +57,8 @@ class SeNodesSmokeTest extends Specification {
     def "one browser on every node should be able to access external Internet resources"() {
         when: "Test Page is open: $testPageAddress"
             webDrivers.each { it.get(testPageAddress) }
-        then: "Youtube button which is loaded from external source is on the page"
-            webDrivers.every { !it.findElements(By.id("___ytsubscribe_0")).empty }
+        then: "JQuery which is loaded from external source should find an element"
+            webDrivers.every { ((JavascriptExecutor) it).executeScript('return $("#to-show").attr("id");') == "to-show"}
     }
 
     def "one browser on every node should be able to execute native events"() {
