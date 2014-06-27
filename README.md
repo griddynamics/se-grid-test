@@ -11,7 +11,7 @@ mvn test \
  -DSELENIUM_URL=http://localhost:4444 \
  -DEXPECTED_NUMBER_OF_BROWSERS=20 \
  -DEXPECTED_NUMBER_OF_NODES=5
- -DTEST_PAGE_HOST=http://localhost
+ -DTEST_PAGE_HOST=localhost
 ```
 Replace Hub URL with your own and numbers with your own. You can also enable proxy by: `-DPROXY_ENABLED -DhttpProxy=localhost:4000`.
 

@@ -93,7 +93,7 @@ class SeNodesSmokeTest extends Specification {
      * @return a built URL to access test page
      */
     private String getTestPageAddress() {
-        return "$testPageUrlToAccess:${((SelectChannelConnector) server.connectors[0]).localPort}"
+        return "http://${testPageUrlToAccess}:${((SelectChannelConnector) server.connectors[0]).localPort}"
     }
 
     /**

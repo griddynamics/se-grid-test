@@ -19,7 +19,7 @@
     <!--Node tests will need to access our test page to check whether Node works correctly, we start embedded HTTP
      Server (Jetty) in tests. In order for Nodes to know where the test page is located, this param should be passed.
      Note that port of the HTTP Server is dynamic and therefore is retrieved in the tests instead of being passed.-->
-    <prop key="TEST_PAGE_HOST">http://localhost</prop>
+    <prop key="TEST_PAGE_HOST">localhost</prop>
     <prop key="EXPECTED_NUMBER_OF_BROWSERS">22</prop>
     <prop key="EXPECTED_NUMBER_OF_NODES">1</prop>
     <prop key="PROXY_ENABLED">false</prop>
