@@ -25,6 +25,7 @@
   <modules>
     <module>selenium-hub-webclient</module>
     <module>selenium-infrastructure-tests</module>
+    <module>selenium-monitoring</module>
   </modules>
 
   <properties>
@@ -34,6 +35,7 @@
     <groovy.version>2.0.7</groovy.version>
     <spock.version>0.7-groovy-2.0</spock.version>
     <spring.version>3.1.1.RELEASE</spring.version>
+    <jetty.version>8.1.15.v20140411</jetty.version>
   </properties>
 
   <dependencyManagement>
@@ -57,7 +59,6 @@
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-server</artifactId>
         <version>2.40.0</version>
-        <scope>test</scope>
         <exclusions>
           <exclusion>
             <groupId>org.mortbay.jetty</groupId>
@@ -75,25 +76,32 @@
         <groupId>org.spockframework</groupId>
         <artifactId>spock-core</artifactId>
         <version>${spock.version}</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.spockframework</groupId>
         <artifactId>spock-spring</artifactId>
         <version>${spock.version}</version>
-        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>cglib</groupId>
+        <artifactId>cglib-nodep</artifactId>
+        <version>3.1</version>
+      </dependency>
+      <!--Mocking of classes in groovy-->
+      <dependency>
+        <groupId>org.objenesis</groupId>
+        <artifactId>objenesis</artifactId>
+        <version>2.1</version>
       </dependency>
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-beans</artifactId>
         <version>${spring.version}</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-test</artifactId>
         <version>${spring.version}</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.springframework</groupId>
@@ -104,23 +112,26 @@
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.10</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.codehaus.groovy</groupId>
         <artifactId>groovy-all</artifactId>
         <version>${groovy.version}</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-server</artifactId>
-        <version>8.1.15.v20140411</version>
+        <version>${jetty.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-jmx</artifactId>
+        <version>${jetty.version}</version>
       </dependency>
       <dependency>
         <groupId>javax.servlet</groupId>
-        <artifactId>servlet-api</artifactId>
-        <version>3.1</version>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.1.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
