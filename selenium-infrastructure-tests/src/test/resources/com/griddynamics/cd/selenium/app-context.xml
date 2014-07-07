@@ -22,6 +22,8 @@
     <prop key="TEST_PAGE_HOST">localhost</prop>
     <prop key="EXPECTED_NUMBER_OF_BROWSERS">22</prop>
     <prop key="EXPECTED_NUMBER_OF_NODES">1</prop>
+    <!--Coma-separated list of browsers to run tests on-->
+    <prop key="BROWSERS_TO_CHECK">firefox</prop>
     <prop key="PROXY_ENABLED">false</prop>
   </util:properties>
   <!--You can also set these proxy-related params while starting the tests. By default all of them are empty and proxy

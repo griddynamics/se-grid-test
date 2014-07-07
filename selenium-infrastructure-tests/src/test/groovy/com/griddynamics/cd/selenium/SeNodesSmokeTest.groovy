@@ -24,9 +24,10 @@ import spock.lang.Specification
 class SeNodesSmokeTest extends Specification {
     @Value('${TEST_PAGE_HOST}') String testPageUrlToAccess
     @Value('${EXPECTED_NUMBER_OF_NODES}') int numberOfNodes
+    @Value('${BROWSERS_TO_CHECK}') String[] browsersToTest
     @Autowired Server server
     @Autowired WebDriverFactory driverFactory
-    @Shared List<WebDriver> webDrivers
+    @Shared WebDriver[] webDrivers
 
     def setup() {
         if (!webDrivers) {
@@ -81,7 +82,7 @@ class SeNodesSmokeTest extends Specification {
         webDrivers.each {
             try {
                 it.quit()
-            } catch (any) {//do nothing but let other browsers to close
+            } catch (ignored) {//do nothing but let other browsers to close
             }
         }
     }
@@ -102,9 +103,13 @@ class SeNodesSmokeTest extends Specification {
      * @return all the created WD sessions
      */
     private List<WebDriver> createWds(int numberOfBrowsers) {
-        return (1..numberOfBrowsers).collect {
-            println "Starting #$it browser of $numberOfBrowsers"
-            driverFactory.createDriver(new DesiredCapabilities(browserName: 'firefox'))
+        List<WebDriver> webDrivers = []
+        for(String browser: browsersToTest) {
+            (1..numberOfBrowsers).each {
+                println "Starting $browser #$it of $numberOfBrowsers"
+                webDrivers.add(driverFactory.createDriver(new DesiredCapabilities(browserName: browser)))
+            }
         }
+        return webDrivers
     }
 }
