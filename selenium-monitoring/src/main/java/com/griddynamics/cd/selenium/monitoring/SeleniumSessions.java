@@ -38,7 +38,7 @@ public class SeleniumSessions implements SeleniumSessionsMBean {
     public static List<SeleniumSessions> forDifferentCapabilities(Registry registry) {
         List<SeleniumSessions> seleniumSessionsList = new ArrayList<SeleniumSessions>();
         for (Platform platform : Platform.values()) {
-            for (String browser : Lists.newArrayList("firefox", "chrome", "internet explorer", "ANY")) {
+            for (String browser : Lists.newArrayList("firefox", "chrome", "iexplorer", "ANY")) {
                 seleniumSessionsList.add(new SeleniumSessions(browser, platform, registry));
             }
         }
