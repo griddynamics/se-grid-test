@@ -17,8 +17,19 @@ public class SeleniumGridGeneralMetrics implements SeleniumGridGeneralMetricsMBe
      * @return number of sessions established with Se Hub but didn't forwarded to the Se Nodes for execution because
      * there is not enough of free slots
      */
+    @Override
     public int getNumberOfSessionsInQueue() {
         return registry.getNewSessionRequestCount();
+    }
+
+    /**
+     * Number of nodes Hub thinks it has.
+     *
+     * @return number of nodes Hub thinks it has
+     */
+    @Override
+    public int getNumberOfActiveNodes() {
+        return registry.getAllProxies().size();
     }
 
     public static String getJmxObjectName() {
