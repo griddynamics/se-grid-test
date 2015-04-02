@@ -38,7 +38,7 @@
     <targetJdk>1.6</targetJdk>
     <groovy.version>2.0.7</groovy.version>
     <spock.version>0.7-groovy-2.0</spock.version>
-    <spring.version>3.1.1.RELEASE</spring.version>
+    <spring.version>4.1.6.RELEASE</spring.version>
     <jetty.version>8.1.15.v20140411</jetty.version>
   </properties>
 
