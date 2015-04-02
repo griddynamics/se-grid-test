@@ -10,14 +10,14 @@ embedded HTTP Servers starts in the tests.
 mvn test \
  -DSELENIUM_URL=http://localhost:4444 \
  -DEXPECTED_NUMBER_OF_BROWSERS=20 \
- -DEXPECTED_NUMBER_OF_NODES=5
- -DTEST_PAGE_HOST=localhost
+ -DEXPECTED_NUMBER_OF_NODES=5 \
+ -DTEST_PAGE_HOST=localhost \
  -DBROWSERS_TO_CHECK=firefox,chrome
 ```
 Replace Hub URL with your own and numbers with your own. You can also enable proxy by: `-DPROXY_ENABLED -DhttpProxy=localhost:4000`.
 
 Full list of parameters can be found
-[here](selenium-infrastructure-tests/src/test/resources/com/griddynamics/cd/selenium/app-context.xml).
+[here](src/test/resources/com/griddynamics/cd/selenium/app-context.xml).
 
 Note, that test page is running on the same machine where tests are running, so you should specify its address along with
 the protocol (http in most cases or https if you have some kind of proxy or whatever).
